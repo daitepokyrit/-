@@ -3,23 +3,19 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Создаем смешанный список с использованием Object
-        List<Object> spisok = new ArrayList<>();
+        List<Integer> spisok = new ArrayList<>();
         spisok.add(1);
         spisok.add(2);
         spisok.add(3);
-        spisok.add("a");
-        spisok.add("b");
-        spisok.add("d");
+        spisok.add(4);
         
-        List<Integer> spisokChisla = new ArrayList<>();
-        
-        for (Object el : spisok) {
-            if (el instanceof Integer) {
-                spisokChisla.add((Integer) el);
-            }
+        if (!spisok.isEmpty()) {
+            spisok.remove(spisok.size() - 1);
         }
+
         
-        System.out.println(spisokChisla);
+        spisok.add(10);
+        
+        System.out.println(spisok); // [1, 2, 3, 10]
     }
 }
